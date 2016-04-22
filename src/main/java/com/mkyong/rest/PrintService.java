@@ -22,5 +22,15 @@ public class PrintService {
 		return Response.status(200).entity(result).build();
 
 	}
+	@GET
+	@Path("/getData")
+	public Response getData() {
 
+		customerBo = (CustomerBo) SpringApplicationContext.getBean("customerBo");
+		
+		String result = customerBo.getData();
+
+		return Response.status(200).entity(result).build();
+
+	}
 }
